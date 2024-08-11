@@ -35,7 +35,7 @@ string convert(string s, int numRows) {
 }
 
 string convert1(string s, int numRows){
-    if (s.length() < 2){
+    if (numRows < 2){
         return s;
     }
 
@@ -45,7 +45,7 @@ string convert1(string s, int numRows){
 
     for (char ch : s) {
         row[i].push_back(ch);
-        if (i == 0 || i == flag){
+        if (i == 0 || i == numRows - 1){
             flag = -flag;
 
         }
