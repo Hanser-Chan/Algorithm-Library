@@ -1,6 +1,6 @@
 # 无重复字符的最长子串
 
-[Leetcode Q3](https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/)
+> [Leetcode Q3](https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/)
 
 示例 :
 

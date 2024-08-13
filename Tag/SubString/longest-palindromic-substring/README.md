@@ -1,6 +1,6 @@
 #  最长回文子串
 
-> language : Cpp
+> [LEETCODE Q5](https://leetcode.cn/problems/longest-palindromic-substring/description/)
 
 这题要用动态规划思想，要找的是回文串，它之所以是回文串，就要满足：`设Sub[i:j]是从i~j的子串 \`
 $$
