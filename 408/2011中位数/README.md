@@ -14,20 +14,13 @@ size_t left2{0},right2{nums2.size() - 1},mid2{};
 1. 当两个数组的指针相等时停止循环。
 2. 中间指针始终为`(left1 + right1) / 2`
 3. 如果`nums1[mid1] < nums2[mid2]`，则将丢弃`nums1`的前半部分，丢弃`num2`的后半部分，反过来同理，即更新左或右指针到`mid`位置。
-4. 当剩余元素为**奇数**时，要**注意左右指针的替换位置**，而且判断剩余需要注意`(left1 + right1) % 2 == 0`的时候为奇数**！！！**
+4. 当剩余元素为**奇数**时，要**注意左右指针的替换位置**，而且判断剩余需要注意`(left1 + right1) % 2 == 0`的时候为奇数！！！
 
 
 
 ## 完整实现
 
 ```cpp
-#include <iostream>
-#include <vector>
-#include <format> //cpp20
-#include <algorithm>
-
-using std::vector;
-
 int middle(vector<int> &nums1, vector<int> &nums2){
     size_t left1{0},right1{nums1.size() - 1},mid1{};
     size_t left2{0},right2{nums2.size() - 1},mid2{};
@@ -41,16 +34,16 @@ int middle(vector<int> &nums1, vector<int> &nums2){
 
         if (nums1[mid1] < nums2[mid2]){ //1 < 2
             if ((left1 + right1) % 2 == 0) { //奇数
-                left1 = mid1;
-                right2 = mid2;
+                left1 = mid1; //1往右走
+                right2 = mid2; //2往左走
             } else {
                 left1 = mid1 + 1;
                 right2 = mid2;
             }
         } else { //1 > 2
             if ((left1 + right1) % 2 == 0) { //奇数
-                right1 = mid1;
-                left2 = mid2;
+                right1 = mid1; //1往右走
+                left2 = mid2; //2往左走
             } else {
                 left2 = mid2 + 1;
                 right1 = mid1;
@@ -58,13 +51,6 @@ int middle(vector<int> &nums1, vector<int> &nums2){
         }
     }
     return std::min(nums1[right1],nums2[right2]);
-}
-
-int main() {
-    vector<int> v1{11,13,15,17,19};
-    vector<int> v2{2,4,6,8,20};
-
-    std::cout << std::format("中位数是{}", middle(v1,v2));
 }
 ```
 
