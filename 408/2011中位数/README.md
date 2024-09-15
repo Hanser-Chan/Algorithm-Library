@@ -1,6 +1,8 @@
 # 寻找两个正序序列中位数
 
 >[2011] 408统考算法题
+>
+>类似题目 [LeetCode Q4](https://leetcode.cn/problems/median-of-two-sorted-arrays/description/)
 
 使用`二分查找`的思路，分别为两个数组设置左右指针和中间指针。
 
