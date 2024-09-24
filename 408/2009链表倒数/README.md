@@ -55,7 +55,21 @@ ElemType FindK1(Linklist &L,int k){
 这样走下来比第一个思路要减少1次遍历。时间复杂也是**`O(n)`**。
 
 ```cpp
-T FindK(LLNode* L, int k){
+ElemType FindK2(Linklist &L, int k){
+    cout << "findk2\n";
+    LNode *p,*q;
+    for (int i = 0; i < k; i++) {
+        p = p->next;
+    }
+    while (p->next != nullptr){ //当p到达k时，pq同时后移
+        p = p->next;
+        q = q->next;
+    }
+    return q->data;
+} //整体遍历1遍
+
+
+T FindK(LLNode* L, int k){ //cpp写法
     cout << "findk2\n";
     LLNode *p = L;
     LLNode *q=  L;
